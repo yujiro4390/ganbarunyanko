@@ -3,6 +3,7 @@
 - お問い合わせ（フォームは静的サイトでは送れない）を外す：メニュー項目・ヘッダーのボタン・ページ本体
 - 中身のない電話ボタン（tel:）を外す
 - goope の管理画面リンク・壊れたRSSリンク・goope側のGoogleアナリティクスを外す
+- グーペのテンプレート画像を自作画像（tools/theme_images/、make_theme_images.py で生成）で上書き
 """
 import re, shutil
 from pathlib import Path
@@ -41,7 +42,13 @@ def main():
             f.write_text(t, encoding='utf-8'); n += 1
     shutil.rmtree(DOCS / 'contact', ignore_errors=True)
     shutil.rmtree(DOCS / '_assets' / 'r.goope.jp' / 'ganbarunyanko', ignore_errors=True)
-    print(f'{n} ページを整えた')
+    src = Path(__file__).resolve().parent / 'theme_images'
+    m = 0
+    for f in src.rglob('*.*'):
+        dst = DOCS / '_assets' / 'ganbarunyanko.com' / 'img' / f.relative_to(src)
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(f, dst); m += 1
+    print(f'{n} ページを整えた / テンプレート画像 {m} 点を差し替えた')
 
 
 if __name__ == '__main__':
