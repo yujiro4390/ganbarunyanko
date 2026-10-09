@@ -1,0 +1,34 @@
+.p-diary__unit {
+  margin: 0 0 7em;
+}
+
+.p-diary__date {
+  font-size: 1em;
+  line-height: 1;
+  margin: 0 0 0.4em;
+}
+
+.p-diary__title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.p-diary__category {
+  font-size: 0.8em;
+  margin: 0.5em 0 1.2em;
+}
+
+.p-diary__body {
+  display: block;
+}
+
+.p-diary__body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.p-diary__body img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,79 @@
+/*------------------------------------------------------------------------------
+custom staff
+------------------------------------------------------------------------------*/
+.staff_wrap {
+  width: 100%;
+  margin-bottom: 30px;
+  float: left;
+}
+
+.staff--image {
+  margin-right: 3%;
+  float: left;
+  width: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.staff--image::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.staff__text {
+  float: left;
+  width: 65%;
+}
+
+.staff__text--name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.staff__text--job {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.staff__text--description {
+  margin-bottom: 25px;
+}
+
+.staff__text__social a {
+  letter-spacing: 0.5px;
+  margin: 0 14px 10px 0;
+  display: block;
+  float: left;
+}
+
+.staff__text__social a:link {
+  text-decoration: none;
+}
+
+.staff__text__social a:visited {
+  text-decoration: none;
+}
+
+.staff__text__social a:hover {
+  text-decolation: none;
+  opacity: 0.7;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.staff__text__social a:active {
+  text-decoration: none;
+}
+
+.staff__text__social_icon img {
+  width: 18px;
+  vertical-align: middle;
+}
+
+.staff__text__social_text {
+  font-size: 12px;
+}
